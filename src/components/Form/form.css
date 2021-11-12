@@ -16,7 +16,17 @@
   font-size: 1.2rem;
   background-color: var(--bg-color-primary);
   color: var(--text-color-primary);
-  border: none;
   border: 0.1rem solid var(--text-color-primary);
-  border-radius: 0.4rem;
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+  border-right: none;
+}
+
+.form > button {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border: 0.1rem solid var(--text-color-primary);
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  cursor: pointer;
 }
