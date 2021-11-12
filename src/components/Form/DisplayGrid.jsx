@@ -2,9 +2,8 @@ import "./form.css"
 
 export const DisplayGrid = ({notes, setNotes}) => {
   const deleteNote = (note) => {
-    const temp = notes.filter(entry => entry.id !== note.id)
-    setNotes(temp)
-    console.log(note, notes, temp)
+    const temp = notes.filter(entry => entry.id !== note.id);
+    setNotes(temp);
   }
   return (
     <div className="grid-container">
