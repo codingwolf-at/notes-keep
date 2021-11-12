@@ -1,6 +1,7 @@
+import { v4 as uuidv4 } from 'uuid';
 import { useState } from "react";
 import "./form.css";
-import { v4 as uuidv4 } from 'uuid';
+import { DisplayGrid } from './DisplayGrid';
 
 export const Form = ({notes, setNotes}) => {
   const [input, setInput] = useState("");
@@ -22,8 +23,8 @@ export const Form = ({notes, setNotes}) => {
       <div className="form">
         <input type="text" onChange={(e) => inputHandler(e)} placeholder="Take a note..." />
         <button onClick={notesHandler}>Add to Notes</button>
-        <DisplayGrid /> 
       </div>
+      <DisplayGrid notes={notes} /> 
     </div>
   )
 }
