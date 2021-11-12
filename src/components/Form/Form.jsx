@@ -18,7 +18,7 @@ export const Form = ({notes, setNotes}) => {
   return (
     <div className="wrapper">
       <div className="form">
-        <input type="text" onChange={(e) => inputHandler(e)} />
+        <input type="text" onChange={(e) => inputHandler(e)} placeholder="Take a note..." />
         <button onClick={notesHandler}>Set</button>
       </div>
     </div>

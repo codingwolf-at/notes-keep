@@ -1,0 +1,22 @@
+:root {
+  --bg-color-primary: #202124;
+  --text-color-primary: #E8EAED;
+}
+
+.wrapper {
+  padding: 2rem;
+}
+
+.form {
+  text-align: center;
+}
+
+.form > input {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  background-color: var(--bg-color-primary);
+  color: var(--text-color-primary);
+  border: none;
+  border: 0.1rem solid var(--text-color-primary);
+  border-radius: 0.4rem;
+}
