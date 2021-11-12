@@ -15,7 +15,6 @@ export const Form = ({notes, setNotes}) => {
         textValue: input
       }
     ]);
-    console.log(notes)
   }
 
   return (
@@ -24,7 +23,7 @@ export const Form = ({notes, setNotes}) => {
         <input type="text" onChange={(e) => inputHandler(e)} placeholder="Take a note..." />
         <button onClick={notesHandler}>Add to Notes</button>
       </div>
-      <DisplayGrid notes={notes} /> 
+      <DisplayGrid notes={notes} setNotes={setNotes} /> 
     </div>
   )
 }

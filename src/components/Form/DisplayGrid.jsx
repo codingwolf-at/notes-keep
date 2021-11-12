@@ -1,13 +1,18 @@
 import "./form.css"
 
-export const DisplayGrid = ({notes}) => {
+export const DisplayGrid = ({notes, setNotes}) => {
+  const deleteNote = (note) => {
+    const temp = notes.filter(entry => entry.id !== note.id)
+    setNotes(temp)
+    console.log(note, notes, temp)
+  }
   return (
     <div className="grid-container">
       {
         notes.length 
         ? notes.map(note => (
           <div id={note.id} className="grid-item">
-            <button className="item-btn close">x</button>
+            <button className="item-btn close" onClick={() => deleteNote(note)}>x</button>
             <p>{note.textValue}</p>
           </div>
         ))
