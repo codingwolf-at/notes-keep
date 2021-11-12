@@ -1,3 +1,9 @@
+:root {
+  --bg-color-primary: #202124;
+  --text-color-primary: #E8EAED;
+}
+
 .header {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-bottom: 0.1rem solid var(--text-color-primary);
 }
