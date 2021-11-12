@@ -45,6 +45,27 @@
   border: 0.1rem solid var(--text-color-primary);
   word-wrap: break-word;
   border-bottom-right-radius: 1rem;
+  position: relative;
+}
+
+.item-btn {
+  border-radius: 50%;
+  border: 0.1rem solid var(--text-color-primary);
+  background-color: var(--bg-color-primary);
+  color: var(--text-color-primary);
+  height: 1.5rem;
+  width: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  right: -0.6rem;
+  top: -0.8rem;
 }
 
 .user-msg {
