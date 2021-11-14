@@ -8,16 +8,24 @@ export const Form = ({notes, setNotes}) => {
   
   const inputHandler = (e) => setInput(e.target.value);
   
+  const getDate = () => {
+    const d = new Date();
+    const day = d.getDate();
+    const month = d.getMonth()+1;
+    const year = d.getFullYear();
+    return `${day}/${month}/${year}`
+  }
+
   const notesHandler = () => {
     setNotes([
       ...notes, {
         id: uuidv4(),
-        textValue: input
+        textValue: input,
+        date: getDate()
       }
     ]);
     setInput("")
   }
-
   return (
     <div className="wrapper">
       <div className="form">
