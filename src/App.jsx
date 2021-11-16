@@ -4,16 +4,22 @@ import { Header, Form } from './components';
 
 function App() {
   const [notes, setNotes] = useState([]);
-  const [theme, setTheme] = useState('dark')
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('notes'));
+    const prevTheme = localStorage.getItem('theme');
     setNotes(data);
+    setTheme(prevTheme);
   }, [])
 
   useEffect(() => {
     localStorage.setItem('notes', JSON.stringify(notes));
   }, [notes])
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme)
+  }, [theme])
 
   return (
     <div className="App" data-theme={theme}>
