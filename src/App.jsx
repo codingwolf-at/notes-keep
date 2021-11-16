@@ -4,6 +4,7 @@ import { Header, Form } from './components';
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [theme, setTheme] = useState('dark')
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('notes'));
@@ -15,8 +16,8 @@ function App() {
   }, [notes])
 
   return (
-    <div className="App">
-      <Header />
+    <div className="App" data-theme={theme}>
+      <Header theme={theme} setTheme={setTheme} />
       <Form notes={notes} setNotes={setNotes} />
     </div>
   );
