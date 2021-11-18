@@ -19,3 +19,4 @@
 - Trash Bin
 - Note categories (IMP, Reminder, Notification, etc)
 - Routes using React Router v6
+- Edit notes
