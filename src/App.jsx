@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import { Header, Form } from './components';
+import { Header, Form, DisplayGrid } from './components';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -25,6 +25,7 @@ function App() {
     <div className="App" data-theme={theme}>
       <Header theme={theme} setTheme={setTheme} />
       <Form notes={notes} setNotes={setNotes} />
+      <DisplayGrid notes={notes} setNotes={setNotes} /> 
     </div>
   );
 }
