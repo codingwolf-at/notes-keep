@@ -1,0 +1,28 @@
+:root {
+  --bg-color-primary: #202124;
+  --text-color-primary: #E8EAED;
+}
+
+.header {
+  padding: 0.5rem 1rem;
+  border-bottom: 0.1rem solid var(--text-color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-links a {
+  color: var(--text-color-primary); 
+}
+
+.header-links button {
+  border: none;
+  padding: 0.2rem 0.5rem;
+  font-family: inherit;
+  color: var(--text-color-primary);
+  background-color: var(--bg-color-primary);
+  font-size: 1rem;
+  margin: 0 1rem;
+  cursor: pointer;
+}

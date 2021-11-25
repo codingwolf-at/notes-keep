@@ -16,3 +16,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --bg-color-primary: #202124;
+  --text-color-primary: #E8EAED;
+}
+
+[data-theme='light'] {
+  --bg-color-primary: #E8EAED;
+  --text-color-primary: #202124;
+}
