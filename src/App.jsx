@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import { Header, Form, DisplayGrid } from './components';
+import { useLocalStorage } from './hooks/useLocalStorage';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -13,13 +14,7 @@ function App() {
     setTheme(prevTheme);
   }, [])
 
-  useEffect(() => {
-    localStorage.setItem('notes', JSON.stringify(notes));
-  }, [notes])
-
-  useEffect(() => {
-    localStorage.setItem('theme', theme)
-  }, [theme])
+  useLocalStorage(notes, theme);
 
   return (
     <div className="App" data-theme={theme}>
