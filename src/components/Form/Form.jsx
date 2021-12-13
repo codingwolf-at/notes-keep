@@ -1,10 +1,13 @@
 import { v4 as uuidv4 } from 'uuid';
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import "./form.css";
+import { notesContext } from '../../contexts/notes-context';
 
-export const Form = ({notes, setNotes}) => {
+export const Form = () => {
   const [input, setInput] = useState("");
   const inputElement = useRef(null);
+
+  const {notes, setNotes} = useContext(notesContext);
 
   useEffect(() => {
     inputElement.current.focus();
