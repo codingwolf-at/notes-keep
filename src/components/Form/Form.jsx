@@ -1,9 +1,14 @@
 import { v4 as uuidv4 } from 'uuid';
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./form.css";
 
 export const Form = ({notes, setNotes}) => {
   const [input, setInput] = useState("");
+  const inputElement = useRef(null);
+
+  useEffect(() => {
+    inputElement.current.focus();
+  }, [])
   
   const inputHandler = (e) => setInput(e.target.value);
   
@@ -28,7 +33,7 @@ export const Form = ({notes, setNotes}) => {
   return (
     <div className="wrapper">
       <div className="form">
-        <input type="text" onChange={(e) => inputHandler(e)} value={input} placeholder="Take a note..." />
+        <input ref={inputElement} type="text" onChange={(e) => inputHandler(e)} value={input} placeholder="Take a note..." />
         <button onClick={notesHandler}>Add to Notes</button>
       </div>
     </div>
