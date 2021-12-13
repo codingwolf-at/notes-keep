@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { notesContext } from "../../contexts/notes-context";
+import { useNotes } from "../../hooks";
 import "./display_grid.css";
 
 export const DisplayGrid = () => {
-  const {notes, setNotes} = useContext(notesContext);
+  const {notes, setNotes} = useNotes();
 
   const deleteNote = (note) => {
     const temp = notes.filter(entry => entry.id !== note.id);

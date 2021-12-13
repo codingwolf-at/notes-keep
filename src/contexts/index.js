@@ -1,2 +1,2 @@
-export {NotesProvider} from "./notes-context";
-export {ThemeProvider} from "./theme-context";
+export {NotesProvider, notesContext} from "./notes-context";
+export {ThemeProvider, themeContext} from "./theme-context";

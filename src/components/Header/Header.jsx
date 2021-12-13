@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import { themeContext } from "../../contexts/theme-context";
+import {useTheme} from "../../hooks";
 import "./header.css"
 
 export const Header = () => {
-  const {theme, setTheme} = useContext(themeContext);
+  const {theme, setTheme} = useTheme();
 
   const switchTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
