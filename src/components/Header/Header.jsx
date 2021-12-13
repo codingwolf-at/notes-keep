@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import { themeContext } from "../../contexts/theme-context";
 import "./header.css"
 
-export const Header = ({theme, setTheme}) => {
+export const Header = () => {
+  const {theme, setTheme} = useContext(themeContext);
+
   const switchTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);

@@ -1,26 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import './App.css';
 import { Header, Form, DisplayGrid } from './components';
-import { useLocalStorage } from './hooks/useLocalStorage';
+import { themeContext } from './contexts/theme-context';
 
 function App() {
-  const [notes, setNotes] = useState([]);
-  const [theme, setTheme] = useState('dark');
-
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem('notes'));
-    const prevTheme = localStorage.getItem('theme');
-    setNotes(data);
-    setTheme(prevTheme);
-  }, [])
-
-  useLocalStorage(notes, theme);
+  const {theme} = useContext(themeContext);
 
   return (
     <div className="App" data-theme={theme}>
-      <Header theme={theme} setTheme={setTheme} />
-      <Form notes={notes} setNotes={setNotes} />
-      <DisplayGrid notes={notes} setNotes={setNotes} /> 
+      <Header />
+      <Form />
+      <DisplayGrid /> 
     </div>
   );
 }
