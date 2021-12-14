@@ -1,7 +1,9 @@
 import { useContext } from 'react';
-import './App.css';
-import { Header, Form, DisplayGrid } from './components';
+import { Routes, Route } from 'react-router-dom';
+import { Header } from './components';
 import { themeContext } from './contexts/theme-context';
+import './App.css';
+import { Home, Trash } from './pages';
 
 function App() {
   const {theme} = useContext(themeContext);
@@ -9,8 +11,10 @@ function App() {
   return (
     <div className="App" data-theme={theme}>
       <Header />
-      <Form />
-      <DisplayGrid /> 
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/trash" element={<Trash />} />
+      </Routes>
     </div>
   );
 }
