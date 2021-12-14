@@ -7,7 +7,7 @@ export const Form = () => {
   const [input, setInput] = useState("");
   const inputElement = useRef(null);
 
-  const {notes, setNotes} = useNotes();
+  const {setNotes} = useNotes();
 
   useEffect(() => {
     inputElement.current.focus();
@@ -24,7 +24,7 @@ export const Form = () => {
   }
 
   const notesHandler = () => {
-    setNotes([
+    setNotes(notes => [
       ...notes, {
         id: uuidv4(),
         textValue: input,
