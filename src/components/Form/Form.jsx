@@ -39,7 +39,7 @@ export const Form = () => {
   const radioInputHandler = (e) => {
     setRadioInput(e.target.value);
   }
-  console.log(radioInput)
+  
   return (
     <div className="wrapper">
       <div className="form">
