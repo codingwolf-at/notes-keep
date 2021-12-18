@@ -6,9 +6,29 @@
   position: relative;
 }
 
+.action-group {
+  display: flex;
+  width: 100%;
+  justify-items: center;
+  padding: 0.5rem 0rem;
+  border-bottom: 0.1rem solid var(--text-color-primary);
+  margin-bottom: 1rem;
+}
+
+.right {
+  display: flex;
+  margin-left: auto;
+}
+
+.note-action-btn {
+  cursor: pointer;
+  margin: 0rem 0.5rem;
+}
+
 .item-btn {
-  border-radius: 50%;
-  border: 0.1rem solid var(--text-color-primary);
+  /* border-radius: 50%; */
+  /* border: 0.1rem solid var(--text-color-primary); */
+  border: none;
   background-color: var(--bg-color-primary);
   color: var(--text-color-primary);
   height: 1.5rem;
