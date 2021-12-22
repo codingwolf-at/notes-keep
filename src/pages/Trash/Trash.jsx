@@ -1,4 +1,4 @@
-import { DisplayGrid, NoteCard } from "../../components"
+import { DisplayGrid, NoteCard, NoteActionButton } from "../../components"
 import { useTrash } from "../../hooks"
 import "./Trash.css";
 
@@ -16,10 +16,12 @@ export const Trash = () => {
       <DisplayGrid>
         {
           trash.length 
-          ? trash.map(note => {
-            return <NoteCard key={note.id} note={note} deleteNote={deleteNote} />;
-          })
-          : <span className="user-msg">Trash is currently empty! <br /> (┬┬﹏┬┬)</span>
+          ? trash.map(note => (
+            <NoteCard key={note.id} note={note} deleteNote={deleteNote} >
+              <NoteActionButton note={note} action={'Restore'} />
+            </NoteCard>
+            ))
+          : <span className="user-msg">Trash-Bin is currently empty! <br /> (┬┬﹏┬┬)</span>
         }
       </DisplayGrid>
     </div>

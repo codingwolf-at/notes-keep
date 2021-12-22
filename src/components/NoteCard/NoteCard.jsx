@@ -1,9 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBell, faCircleXmark, faClipboard, faNoteSticky, faStar } from "@fortawesome/free-regular-svg-icons";
+import { faBell, faCircleXmark, faNoteSticky, faStar } from "@fortawesome/free-regular-svg-icons";
 import "./NoteCard.css";
 
-export const NoteCard = ({note, deleteNote}) => {
-  const copyHandler = () => navigator.clipboard.writeText(note.textValue);
+export const NoteCard = ({note, deleteNote, children}) => {
   return (
     <div className="grid-item">
       <div className="action-group">
@@ -20,10 +19,7 @@ export const NoteCard = ({note, deleteNote}) => {
           <span>{note.type}</span>
         </div>
         <div className="right">
-          <div onClick={copyHandler} className="note-action-btn">
-            <FontAwesomeIcon icon={faClipboard} fixedWidth /> 
-            <span>Copy</span>  
-          </div>  
+          {children}
         </div>
       </div>
       <button className="item-btn close" onClick={() => deleteNote(note)}>

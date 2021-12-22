@@ -1,4 +1,4 @@
-import { DisplayGrid, Form, NoteCard } from "../../components";
+import { DisplayGrid, Form, NoteActionButton, NoteCard } from "../../components";
 import { useNotes, useTrash } from "../../hooks";
 import "./Home.css";
 
@@ -18,7 +18,11 @@ export const Home = () => {
       <DisplayGrid>
         {
           notes.length 
-          ? notes.map(note => <NoteCard key={note.id} note={note} deleteNote={deleteNote} />)
+          ? notes.map(note => (
+            <NoteCard key={note.id} note={note} deleteNote={deleteNote} >
+              <NoteActionButton note={note} action={'Copy'} />
+            </NoteCard>
+            ))
           : <span className="user-msg">Notes are currently empty! <br /> (┬┬﹏┬┬)</span>
         }
       </DisplayGrid>
