@@ -1,14 +1,17 @@
 import { DisplayGrid, Form, NoteCard } from "../../components";
-import { useNotes } from "../../hooks";
+import { useNotes, useTrash } from "../../hooks";
 import "./Home.css";
 
 export const Home = () => {
   const {notes, setNotes} = useNotes();
+  const {setTrash} = useTrash();
 
   const deleteNote = (note) => {
     const temp = notes.filter(entry => entry.id !== note.id);
     setNotes(temp);
+    setTrash(trash => [...trash, note]);
   }
+
   return (
     <div>
       <Form />
