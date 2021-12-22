@@ -1,4 +1,4 @@
-import { DisplayGrid, NoteCard, NoteActionButton } from "../../components"
+import { DisplayGrid, NoteCard, NoteActionButton, SideNav } from "../../components"
 import { useTrash } from "../../hooks"
 import "./Trash.css";
 
@@ -12,7 +12,8 @@ export const Trash = () => {
 
   return (
     <div>
-    <h1 className="heading">Trash-Bin</h1>
+      <h1 className="heading">Trash-Bin</h1>
+      <SideNav />
       <DisplayGrid>
         {
           trash.length 
