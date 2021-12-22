@@ -1,4 +1,4 @@
-import { DisplayGrid, Form, NoteActionButton, NoteCard } from "../../components";
+import { DisplayGrid, Form, NoteActionButton, NoteCard, SideNav } from "../../components";
 import { useNotes, useTrash } from "../../hooks";
 import "./Home.css";
 
@@ -15,6 +15,7 @@ export const Home = () => {
   return (
     <div>
       <Form />
+      <SideNav />
       <DisplayGrid>
         {
           notes.length 

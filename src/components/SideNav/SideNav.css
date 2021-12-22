@@ -1,0 +1,20 @@
+.side-nav {
+  position: fixed;
+  padding: 0.5rem 0.5rem 0.5rem 0.2rem;
+  left: 0;
+  top: 15vh;
+  display: flex;
+  flex-direction: column;
+  border: 0.2rem solid var(--text-color-primary);
+  border-bottom-right-radius: 1rem;
+  border-left: none;
+}
+
+.side-nav a {
+  color: var(--text-color-primary);
+  margin: 0.5rem 0;
+}
+
+.side-nav a:hover {
+  transform: scale(1.2);
+}
