@@ -23,7 +23,7 @@ export const NoteCard = ({note, deleteNote, children}) => {
         </div>
       </div>
       <button className="item-btn close" onClick={() => deleteNote(note)}>
-        <FontAwesomeIcon icon={faCircleXmark} size="xl" fixedWidth />
+        <FontAwesomeIcon icon={faCircleXmark} size="lg" fixedWidth />
       </button>
       <span className="date">{note.date}</span>
       <p className="note-text">{note.textValue}</p>
