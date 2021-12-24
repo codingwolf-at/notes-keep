@@ -47,8 +47,8 @@ export const Form = () => {
         <button onClick={notesHandler}>Add to Notes</button>
         <div className="radio-wrapper">
           {
-            ['General', 'Reminder', 'Important'].map(category => (
-              <label className='radio-label'>
+            ['General', 'Reminder', 'Important'].map((category, index) => (
+              <label key={index} className='radio-label'>
                 <input 
                   type="radio" 
                   value={category} 
