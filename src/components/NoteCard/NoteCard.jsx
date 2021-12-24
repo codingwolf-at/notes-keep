@@ -8,7 +8,7 @@ export const NoteCard = ({note, deleteNote, children}) => {
       <div className="action-group">
         <div>
           {
-            note.type === 'Note' && <FontAwesomeIcon style={{margin: '0 0.2rem'}} icon={faNoteSticky} fixedWidth />
+            note.type === 'General' && <FontAwesomeIcon style={{margin: '0 0.2rem'}} icon={faNoteSticky} fixedWidth />
           }
           {
             note.type === 'Reminder' && <FontAwesomeIcon style={{color: 'green', margin: '0 0.2rem'}} icon={faBell} fixedWidth />

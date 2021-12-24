@@ -5,7 +5,7 @@ import { useNotes } from '../../hooks';
 
 export const Form = () => {
   const [input, setInput] = useState("");
-  const [radioInput, setRadioInput] = useState('Note');
+  const [radioInput, setRadioInput] = useState('General');
   const inputElement = useRef(null);
 
   const {setNotes} = useNotes();
@@ -47,7 +47,7 @@ export const Form = () => {
         <button onClick={notesHandler}>Add to Notes</button>
         <div className="radio-wrapper">
           {
-            ['Note', 'Reminder', 'Important'].map(category => (
+            ['General', 'Reminder', 'Important'].map(category => (
               <label className='radio-label'>
                 <input 
                   type="radio" 
