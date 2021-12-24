@@ -1,6 +1,9 @@
+import {useTheme} from "../../hooks";
 import "./header.css"
 
-export const Header = ({theme, setTheme}) => {
+export const Header = () => {
+  const {theme, setTheme} = useTheme();
+
   const switchTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);

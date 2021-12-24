@@ -9,14 +9,8 @@
 ## Current features
 
 - Add Notes
-- Delete Notes
+- Trash Bin
 - Timestamp on Notes
 - Change Dark/Light Mode
 - Notes & Theme getting saved in localStorage for now
-
-## To be implemented in next iteration
-
-- Trash Bin
-- Note categories (IMP, Reminder, Notification, etc)
-- Routes using React Router v6
-- Edit notes
+- Note categories (General, Reminder, Important)

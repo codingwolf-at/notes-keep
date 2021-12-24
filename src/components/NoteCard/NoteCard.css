@@ -1,0 +1,43 @@
+.grid-item {
+  padding: 1rem;
+  border: 0.1rem solid var(--text-color-primary);
+  word-wrap: break-word;
+  border-bottom-right-radius: 1rem;
+  position: relative;
+}
+
+.action-group {
+  display: flex;
+  width: 100%;
+  justify-items: center;
+  padding: 0.5rem 0rem;
+  border-bottom: 0.1rem solid var(--text-color-primary);
+  margin-bottom: 1rem;
+}
+
+.right {
+  display: flex;
+  margin-left: auto;
+}
+
+.item-btn {
+  border: none;
+  background-color: var(--bg-color-primary);
+  color: var(--text-color-primary);
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  right: -0.6rem;
+  top: -0.6rem;
+}
+
+.date {
+  position: absolute;
+  right: 1.5rem;
+  top: -0.65rem;
+  padding: 0 0.2rem;
+  border: 0.1rem solid var(--text-color-primary);
+  background-color: var(--bg-color-primary);
+}

@@ -1,0 +1,6 @@
+.user-msg {
+  font-size: 2rem;
+  grid-column: span 3;
+  justify-self: center;
+  text-align: center;
+}

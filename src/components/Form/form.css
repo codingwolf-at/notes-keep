@@ -16,6 +16,7 @@
   border-top-left-radius: 0.4rem;
   border-bottom-left-radius: 0.4rem;
   border-right: none;
+  outline: transparent;
 }
 
 .form > button {
@@ -25,4 +26,16 @@
   border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
   cursor: pointer;
+}
+
+.radio-wrapper {
+  padding: 1.5rem;
+}
+
+.radio-label {
+  margin:  0rem 1rem;
+}
+
+.radio-label input {
+  margin: 0rem 0.3rem;
 }

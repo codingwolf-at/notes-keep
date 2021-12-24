@@ -1,31 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { Header } from './components';
+import { themeContext } from './contexts/theme-context';
 import './App.css';
-import { Header, Form, DisplayGrid } from './components';
+import { Home, Important, Reminder, Trash } from './pages';
 
 function App() {
-  const [notes, setNotes] = useState([]);
-  const [theme, setTheme] = useState('dark');
-
-  useEffect(() => {
-    const data = JSON.parse(localStorage.getItem('notes'));
-    const prevTheme = localStorage.getItem('theme');
-    setNotes(data);
-    setTheme(prevTheme);
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem('notes', JSON.stringify(notes));
-  }, [notes])
-
-  useEffect(() => {
-    localStorage.setItem('theme', theme)
-  }, [theme])
+  const {theme} = useContext(themeContext);
 
   return (
     <div className="App" data-theme={theme}>
-      <Header theme={theme} setTheme={setTheme} />
-      <Form notes={notes} setNotes={setNotes} />
-      <DisplayGrid notes={notes} setNotes={setNotes} /> 
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/trash" element={<Trash />} />
+        <Route path="/reminder" element={<Reminder />} />
+        <Route path="/important" element={<Important />} />
+      </Routes>
     </div>
   );
 }
