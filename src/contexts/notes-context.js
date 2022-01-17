@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useReducer } from "react";
 import {getDate} from "../utils";
 
 export const notesContext = createContext();
