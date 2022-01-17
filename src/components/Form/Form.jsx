@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 import { useEffect, useRef, useState } from "react";
 import "./form.css";
 import { useNotes } from '../../hooks';
@@ -8,31 +7,17 @@ export const Form = () => {
   const [radioInput, setRadioInput] = useState('General');
   const inputElement = useRef(null);
 
-  const {setNotes} = useNotes();
+  const {dispatch} = useNotes();
 
   useEffect(() => {
     inputElement.current.focus();
   }, [])
   
   const inputHandler = (e) => setInput(e.target.value);
-  
-  const getDate = () => {
-    const d = new Date();
-    const day = d.getDate();
-    const month = d.getMonth()+1;
-    const year = d.getFullYear();
-    return `${day}/${month}/${year}`
-  }
+
 
   const notesHandler = () => {
-    setNotes(notes => [
-      ...notes, {
-        id: uuidv4(),
-        textValue: input,
-        date: getDate(),
-        type: radioInput
-      }
-    ]);
+    dispatch({type: "ADD_TO_NOTES", payload: {input, radioInput}});
     setInput('');
   };
 

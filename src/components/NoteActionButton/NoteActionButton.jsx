@@ -1,19 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faClipboard, faPaperPlane} from "@fortawesome/free-regular-svg-icons";
-import { useNotes, useTrash } from "../../hooks";
+import { useNotes } from "../../hooks";
 import './NoteActionButton.css';
 
 
 export const NoteActionButton = ({note, action}) => {
-  const {setNotes} = useNotes();
-  const {trash, setTrash} = useTrash();
+  const {dispatch} = useNotes();
 
   const copyHandler = () => navigator.clipboard.writeText(note.textValue);
 
   const restoreHandler = () => {
-    const temp = trash.filter(entry => entry.id !== note.id);
-    setTrash(temp);
-    setNotes(notes => [...notes, note])
+    dispatch({type: "RESTORE_FROM_TRASH", payload: note});
   }
 
   return (
