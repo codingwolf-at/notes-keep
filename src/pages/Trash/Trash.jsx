@@ -1,13 +1,12 @@
 import { DisplayGrid, NoteCard, NoteActionButton, SideNav } from "../../components"
-import { useTrash } from "../../hooks"
+import { useNotes } from "../../hooks"
 import "./Trash.css";
 
 export const Trash = () => {
-  const {trash, setTrash} = useTrash();
+  const {trash, dispatch} = useNotes();
 
   const deleteNote = (note) => {
-    const temp = trash.filter(entry => entry.id !== note.id);
-    setTrash(temp);
+    dispatch({type: "DELETE_FROM_TRASH", payload: note})
   }
 
   return (

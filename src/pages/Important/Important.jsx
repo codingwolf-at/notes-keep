@@ -1,17 +1,14 @@
 import { DisplayGrid, SideNav, NoteCard,NoteActionButton } from "../../components";
-import { useNotes, useTrash } from "../../hooks";
+import { useNotes } from "../../hooks";
 import "./Important.css";
 
 export const Important = () => {
-  const {notes, setNotes} = useNotes();
-  const {setTrash} = useTrash();
+  const {notes, dispatch} = useNotes();
 
   const data = notes.filter(note => note.type === 'Important');
 
   const deleteNote = (note) => {
-    const temp = notes.filter(entry => entry.id !== note.id);
-    setNotes(temp);
-    setTrash(trash => [...trash, note]);
+    dispatch({type: "DELETE_FROM_NOTES", payload: note});
   }
 
   return (
